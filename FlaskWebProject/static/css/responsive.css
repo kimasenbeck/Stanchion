@@ -1,3 +1,17 @@
+@media (max-width: 767px) {
+    .title-container{
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    #home .btn {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    #about {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+}
 
 @media (max-width: 880px) {
 /*    #tf-menu.navbar-default {
