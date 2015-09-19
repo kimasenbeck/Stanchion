@@ -15,7 +15,8 @@
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../static/css/stylish-portfolio.css" rel="stylesheet">
+    <link href="../static/css/index.css" rel="stylesheet">
+    <link href="../static/css/responsive.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -31,73 +32,71 @@
 </head>
 
 <body>
+    <!-- Navigation -->
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-collapse">
+            Menu
+          </button>
+          <a class="navbar-brand" href="index.html">stanchion</a>
+        </div>
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#home" class="page-scroll">home</a></li>
+            <li><a href="#about" class="page-scroll">about</a></li>
+            <li><a href="#to-app" class="page-scroll">to app</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
 
     <!-- Header -->
-    <header id="top" class="header">
+    <div id="home">
+        <div class="bg-image shadow-1">
+            <!-- <div class="image-overlay">
+            </div> -->
+        </div>
         <div class= "overlay">
-            <div class="text-vertical-center">
-                <div class= "textwrap">
-                    <h1>Stanchion</h1>
-                    <h3>Dynamic Crowd Control</h3>
-                    <br>
-                    <a href="control" class="btn btn-dark btn-lg">Next</a>
-                </div>
+            <div class="title-container">
+                <h1>Stanchion</h1>
+                <!-- <a href="control" class="btn">
+                    <i class="fa fa-arrow-right"></i>
+                </a> -->
+                <h3>Dynamic Crowd Control</h3>
             </div>
         </div>
-    </header>
+    </div>
+
+    <div id="about">
+        <div class="description">
+            <p>Lorem ipsum dolor sit amet, nulla nulla accumsan est facilisi in. Ipsum et sem nulla, vitae minus wisi sed mauris vehicula, dignissim blandit vel tincidunt mauris quisque. In tincidunt quis nulla at nisl nulla. Eu praesent, orci praesent imperdiet non, diam egestas leo viverra vestibulum pharetra, leo sed suspendisse pretium etiam a. Enim accumsan augue, et a, ac neque ornare cras fusce dui amet. Donec nulla praesent laoreet vel amet, quam semper velit faucibus at, ut mi adipiscing, praesent auctor lorem. Eget enim est vestibulum sit. Erat vehicula a ut ante duis justo, sed ultricies fusce massa nam, tristique id tellus, sed turpis id et mi libero vel. Aliquam accumsan massa erat libero, sollicitudin tortor sodales vitae, tortor integer suspendisse vulputate consequat, ipsum purus rutrum rhoncus facilisis et, aliquam etiam faucibus arcu cum eget.
+            </p>
+        </div>
+    </div>
 
     <!-- Footer -->
-    <footer>
+    <!-- <footer>
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Stanchion</strong>
-                    </h4>
-                    <p>Created at HackMIT 2015<br>by Kim Asenbeck, Vasu Agrawal, </br> Sam Chin, and Franton Lin</p>
-                    <br>
+                    <p>Created at HackMIT 2015 by Kim Asenbeck, Vasu Agrawal, Sam Chin, and Franton Lin</p>
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="../static/js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script>
-    // Closes the sidebar menu
-    $("#menu-close").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-
-    // Opens the sidebar menu
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-
-    // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
-    </script>
+    <script type="text/javascript" src="static/js/main.js"></script>
 
 
 </body>

@@ -1,0 +1,33 @@
+
+@media (max-width: 880px) {
+/*    #tf-menu.navbar-default {
+        background-color: rgba(0, 0, 0, 0.65);
+    }*/
+}
+
+/* tall (mobile portrait) */
+@media (max-width: 493px) {
+    /*.content {
+        margin: 30px 0;
+	}*/
+/*    #tf-menu {
+        padding:0 !important
+    }*/
+    /*#tf-menu .navbar-header {
+        padding:10px 0;
+    }*/
+/*    .on {
+        background-color: rgba(0, 0, 0, 0.65) !important;
+    }
+    .on .navbar-header{
+        padding: 0 !important;
+        background-color: #222222;
+    }*/
+}
+
+/* wide (mobile landscape) */
+@media (max-height: 420px) {
+    /*#tf-menu {
+        padding:10px 0;
+    }*/
+}
