@@ -1,0 +1,182 @@
+/*!
+ * Start Bootstrap - Stylish Portfolio Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h1{
+    margin: 0;
+    padding: 0;
+    text-transform: lowercase;
+    font-size: 6em;
+    font-weight: 700;
+    color: #fff;
+}
+
+h2{
+    font-size: 3em;
+}
+
+h3{
+    /*color: #208C82;*/
+    font-size: 2em;
+    color:  #fff;
+    text-transform: lowercase;
+}
+
+p{
+    color:#333;
+    font-size: 15px;
+}
+
+/* Box Shadows */
+.shadow-0 {
+    border: 1px solid #eee;
+}
+.shadow-1 {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.shadow-2 {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.shadow-3 {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.shadow-4 {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.shadow-5 {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+/* Navigation */
+#tf-menu {
+    padding: 0px 0;
+    transition: all 0.8s;
+    height:46px;
+}
+#tf-menu.navbar-default {
+    background-color: rgba(0, 151, 167, 1);
+    border-color: rgba(231, 231, 231, 0);
+}
+#tf-menu a.navbar-brand {
+    position:relative;
+    text-transform: lowercase;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 900;
+    opacity: 1;
+    /*z-index: -1;*/
+    transition: all 0.8s;
+}
+#tf-menu .navbar-header {
+    transition: all 0.8s;
+}
+
+#tf-menu.navbar-default .navbar-nav > li > a {
+    text-transform: lowercase;
+    color: #FFF;
+    /*border: 1px solid #FFC107;*/
+    /*border: 1px solid #FFF;*/
+    padding:6px 10px;
+    margin:5px;
+    opacity: 0.9;
+    border-radius: 5px;
+    text-decoration: underline;
+    /*font-size: 12px;*/
+    /*letter-spacing: 1px;*/
+}
+.on {
+    padding: 0 !important;
+    background-color: #0097A7 !important;
+}
+
+.navbar {
+    min-height: 40px;
+}
+
+.navbar-brand {
+    padding: 12px 15px;
+}
+
+.navbar-right {
+    margin-right: 13%;
+}
+
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #fff !important;
+    background-color: transparent;
+    font-weight: 700;
+    /*border: 2px solid #FFC107 !important;*/
+    /*border: 2px solid #FFF !important;*/
+    /*padding:5px 9px !important;*/
+}
+
+.navbar-toggle {
+    border-radius: 5px;
+    padding:6px 10px;
+    margin-top:5px;
+    text-transform: lowercase;
+    color:#fff;
+    /*border-color:#FFC107;*/
+    border-color:#FFF;
+}
+.navbar-default .navbar-toggle:hover, 
+.navbar-default .navbar-toggle:focus {
+    color:#fff;
+    background-color: transparent;
+    /*border-color: #FFC107;*/
+}
+.navbar-default .navbar-toggle:hover>.icon-bar {
+    background-color: #FFF;
+}
+
+/* Controller */
+#controller {
+    position:relative;
+    margin-top:45px;
+    height:70%;
+    width:100%;
+    /*overflow: hidden;*/
+    min-height: 360px;
+}
+
+#controlCanvas {
+    position:relative;
+    /*width:100%;
+    height:100%;*/
+    /*background-color: #B2EBF2;*/
+}
+
+/* Footer */
+
+footer {
+    background-color: #FFC107;
+    width:100%;
+    bottom:0;
+    left:0;
+    position: absolute;
+    padding: 2px 0;
+    text-transform: lowercase;
+    z-index:1000;
+    /*transform: translate(-100%,0%);*/
+}
+
+footer p {
+    margin:2px;
+}

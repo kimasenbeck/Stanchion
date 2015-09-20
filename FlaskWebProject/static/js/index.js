@@ -1,7 +1,6 @@
 function main() {
   (function () {
     'use strict';
-    var slider;
 
     $('a.page-scroll').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
