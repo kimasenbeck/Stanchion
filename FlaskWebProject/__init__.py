@@ -2,19 +2,23 @@
 The flask application package.
 """
 
-from flask import Flask, render_template
+from flask import Flask
 
 # Setup Flask
 app = Flask(__name__)
 
-# Main homepage
-@app.route('/')
-def index():
-    return render_template('index.html')
+# from flask import 
 
-@app.route('/control')
-def control():
-    return render_template('control.html')
+# # Main homepage
+# @app.route('/')
+# def index():
+#     return render_template('index.html')
 
-if __name__ == "__main__":
-    app.run()
+# @app.route('/control')
+# def control():
+#     return render_template('control.html')
+
+# if __name__ == "__main__":
+#     app.run()
+
+import FlaskWebProject.views
