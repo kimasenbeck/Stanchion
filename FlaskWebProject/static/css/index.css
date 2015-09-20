@@ -215,7 +215,7 @@ p{
 }
 
 /* Custom Button Styles */
-.down-button{
+.arrow-down{
     position:absolute;
     bottom:0;
     left:15px;
@@ -230,17 +230,62 @@ p{
     z-index: 100;
 }
 
-.down-button:hover,
-.down-button:focus,
-.down-button:active {
+.arrow-down:hover,
+.arrow-down:focus,
+.arrow-down:active {
     color: #fff;
     /*background-color: rgba(0,0,0,0.7);*/
 }
 
-.down-button .fa {
+.arrow-down .fa {
     margin-top: 9px;
     margin-left: 3.5px;
     font-size:20px;
+}
+
+.app-link {
+    position: absolute;
+    bottom:20%;
+    right:150px;
+    text-align: right;
+}
+
+.app-link span {
+    color:#fff;
+}
+
+.arrow-right{
+    position:relative;
+    /*float:right;*/
+    display:inline-block;
+    width:50px;
+    height:50px;
+    padding: 6px 12px;
+    border-radius:25px;
+    color: #fff;
+    background-color: rgba(255,193,7,0.7);
+    z-index: 100;
+}
+
+.arrow-right:hover,
+.arrow-right:focus,
+.arrow-right:active {
+    color: #fff;
+    /*background-color: rgba(0,0,0,0.7);*/
+}
+
+.app-link .fa {
+    position: relative;
+    top: 9px;
+    left: -4px;
+    width:50px;
+    height:50px;
+    padding: 14.5px 12px;
+    border-radius:25px;
+    color: #fff;
+    background-color: rgba(255,193,7,0.7);
+    font-size:20px;
+    text-align: center;
 }
 
 /* About */
@@ -258,8 +303,8 @@ p{
     margin-bottom:8%;
 }
 
-/* To-App */
-#to-app {
+/* The app */
+#the-app {
     position:relative;
     display:table;
     height:auto;
@@ -267,7 +312,7 @@ p{
     background-color: #000;
 }
 
-#to-app .bg-image {
+#the-app .bg-image {
     width: 100%;
     height: 100%;
     position:absolute;
@@ -279,7 +324,7 @@ p{
     opacity: 0.5;
 }
 
-#to-app .overlay {
+#the-app .overlay {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -288,11 +333,11 @@ p{
     background-color: rgba(255,193,7,0.3);
 }
 
-#to-app h2 {
+#the-app h2 {
     color: #fff;
 }
 
-#to-app p {
+#the-app p {
     color: #fff;
 }
 
