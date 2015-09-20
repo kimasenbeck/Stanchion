@@ -7,6 +7,11 @@
 
 using namespace cv;
 
+enum Density {EMPTY = 0,
+              SPARSE = 3,
+              DENSE = 10,
+              FULL = 20};
+
 bool compare(Vec3b* one, Vec3b* two);
 
 bool make_black(Mat* one, Mat* two) {
@@ -28,7 +33,6 @@ bool make_black(Mat* one, Mat* two) {
 }
 
 void clean_black(Mat* dirty, Mat* clean, int grid_size, int maxVal) {
-  std::cout << "did I get called" << std::endl;
   int distance = 5; //that's the boundary we check, everything should be blackish
   /* int maxVal = 4; */
   double maxAllowed = (2 * distance) * (2 * distance) * (3 * maxVal);
@@ -43,8 +47,6 @@ void clean_black(Mat* dirty, Mat* clean, int grid_size, int maxVal) {
 
   int radius = grid_size / 2;
 
-  std::cout << ((dirty->rows - radius) / grid_size) << std::endl;
-  std::cout << ((dirty->cols - radius) / grid_size) << std::endl;
   for (int i = 0; i < ((dirty->rows) / grid_size); i++) {
     for (int j = 0; j < ((dirty->cols) / grid_size); j++) {
       int total = 0;
@@ -57,7 +59,6 @@ void clean_black(Mat* dirty, Mat* clean, int grid_size, int maxVal) {
       }
 
       double ratio = (double)total / maxAllowed;
-      std::cout << ratio << std::endl;
       if (ratio <= 1) {
         for (int k = -1 * radius; k < radius; k++) {
           for (int l = -1 * radius; l < radius; l++) {
@@ -81,9 +82,38 @@ bool compare(Vec3b* one, Vec3b* two) {
   return true;
 }
 
+Density classify(Mat* image) {
+  double pixel_count = image->rows * image->cols;
+  double filled_pixel_count = 0;
+  Vec3b pt;
+  for (int i = 0; i < image->rows; i++) {
+    for (int j = 0; j < image->cols; j++) {
+      pt = image->at<Vec3b>(i, j);
+      if (pt[0] > 0 || pt[1] > 0 || pt[2] > 0) {
+        filled_pixel_count++; 
+        /* std::cout << filled_pixel_count << std::endl; */
+      }
+      /* filled_pixel_count += pt[0] || pt[1] || pt[2]; */
+    }
+  }
+ 
+  filled_pixel_count /= pixel_count;
+  /* std::cout << pixel_count << " " << filled_pixel_count << std::endl; */
+
+  if (filled_pixel_count < .05){
+    return EMPTY;
+  } else if (filled_pixel_count < .4) {
+    return SPARSE;
+  } else if (filled_pixel_count < .8) {
+    return DENSE;
+  } else {
+    return FULL;
+  }
+}
+
 int main()
 {
-    Mat background = imread("captures/clean4.jpg");
+    Mat background = imread("captures/clean.jpg");
     Mat bg_blurred;
     GaussianBlur( background, bg_blurred, Size(5, 5), 0, 0);
 
@@ -111,25 +141,27 @@ int main()
       clean_black( &frame_blurred, &frame_blurred_clean, 20, 10);
       /* clean_black( &frame_blurred, &frame_blurred_clean, 10, 20); */
 
-      cvtColor( frame_blurred, frame_blurred, CV_BGR2GRAY);
-      threshold( frame_blurred, frame_blurred, 128, 255, CV_THRESH_BINARY);
+      /* cvtColor( frame_blurred, frame_blurred, CV_BGR2GRAY); */
+      /* threshold( frame_blurred, frame_blurred, 128, 255, CV_THRESH_BINARY); */
 
-      std::vector<std::vector<Point> > contours;
-      Mat contourOutput = frame_blurred.clone();
-      findContours( contourOutput, contours, CV_RETR_LIST, CV_CHAIN_APPROX_NONE);
+      /* std::vector<std::vector<Point> > contours; */
+      /* Mat contourOutput = frame_blurred.clone(); */
+      /* findContours( contourOutput, contours, CV_RETR_LIST, CV_CHAIN_APPROX_NONE); */
 
-      //Draw the contours
-      cv::Mat contourImage(frame_blurred.size(), CV_8UC3, cv::Scalar(0,0,0));
-      cv::Scalar colors[3];
-      colors[0] = cv::Scalar(255, 0, 0);
-      colors[1] = cv::Scalar(0, 255, 0);
-      colors[2] = cv::Scalar(0, 0, 255);
-      for (size_t idx = 0; idx < contours.size(); idx++) {
-        cv::drawContours(contourImage, contours, idx, colors[idx % 3]);
-      }
+      /* //Draw the contours */
+      /* cv::Mat contourImage(frame_blurred.size(), CV_8UC3, cv::Scalar(0,0,0)); */
+      /* cv::Scalar colors[3]; */
+      /* colors[0] = cv::Scalar(255, 0, 0); */
+      /* colors[1] = cv::Scalar(0, 255, 0); */
+      /* colors[2] = cv::Scalar(0, 0, 255); */
+      /* for (size_t idx = 0; idx < contours.size(); idx++) { */
+      /*   cv::drawContours(contourImage, contours, idx, colors[idx % 3]); */
+      /* } */
 
       /* imshow("lalala", frame_blurred); */
       /* imshow("lala", contourImage); */
+      std::cout << classify(&frame_blurred_clean) << std::endl;
+      
       imshow("plz", frame_blurred_clean);
       int k = waitKey(1);
       if ( k > 0 ) {
