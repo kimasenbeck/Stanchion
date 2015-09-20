@@ -1,0 +1,18 @@
+@media (max-width: 767px) {
+    .title-container{
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    #home .down-button {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    #about {
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+    #to-app .text-container{
+        padding-right: 10%;
+        padding-left: 10%;
+    }
+}
