@@ -338,7 +338,11 @@ p{
 }
 
 #the-app p {
-    color: #fff;
+    color: transparent;
+}
+
+#the-app a:hover{
+    text-decoration: none;
 }
 
 .image-overlay {
