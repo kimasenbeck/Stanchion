@@ -26,7 +26,7 @@ function main() {
     Show Menu on Book
     ======================================*/
     $(window).bind('scroll', function() {
-      var navHeight = $(window).height()*0.70; // Where the navigation bar changes
+      var navHeight = $(window).height()*0.6; // Where the navigation bar changes
       if ($(window).scrollTop() > navHeight) {
         $('.navbar-default').addClass('on');
         $('#tf-menu a.navbar-brand').css({'opacity':1,'z-index':0});
